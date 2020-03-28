@@ -1,5 +1,5 @@
 //
-// Created by Vincent Valenzuela
+// Created by Vincent Valenzuela and Ari Encarnacion
 //
 
 #include "RentalForm.hpp"
