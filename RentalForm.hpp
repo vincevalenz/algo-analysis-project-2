@@ -15,9 +15,6 @@ public:
     int getStartDate() { return startDate; }
     int getEndDate() { return endDate; }
     int getAmount() { return amount; }
-    void setStartDate(int s) { startDate = s; }
-    void setEndDate(int e) { endDate = e; }
-    void setAmount(int a) { amount = a; }
 
 private:
     int startDate;
