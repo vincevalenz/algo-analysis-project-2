@@ -6,6 +6,8 @@
 #define PROJECT02_RENTALFORM_HPP
 
 
+#include <vector>
+
 class RentalForm {
 public:
     int getStartDate() { return startDate; }
@@ -15,14 +17,14 @@ public:
     void setEndDate(int e) { endDate = e; }
     void setAmount(int a) { amount = a; }
 
-    RentalForm *getNext() { return next; }
-    void setNext(RentalForm *f) { next = f; }
+    std::vector<RentalForm*> &getEdges() { return edges; }
+    void addEdge(RentalForm *f) { edges.push_back(f); }
 
 private:
     int startDate;
     int endDate;
     int amount;
-    RentalForm *next;
+    std::vector<RentalForm*> edges;
 };
 
 
