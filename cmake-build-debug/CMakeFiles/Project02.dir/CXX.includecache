@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.cpp
+RentalForm.hpp
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
+
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
+vector
+-
+
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/main.cpp
+iostream
+-
+
