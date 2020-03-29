@@ -1,4 +1,4 @@
-"C:\Users\Ari Encarnacion\.CLion2019.3\system\cygwin_cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02"
+"/Users/Ari/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ari/Desktop/SSU/cs415/CS415_Project02
 -- Configuring done
 -- Generating done
--- Build files have been written to: /cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug
+-- Build files have been written to: /Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug

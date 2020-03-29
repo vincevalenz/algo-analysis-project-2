@@ -1,1 +1,1 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/Project02.dir/main.cpp.o CMakeFiles/Project02.dir/Property.cpp.o CMakeFiles/Project02.dir/Graph.cpp.o  -o Project02.exe -Wl,--out-implib,libProject02.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Project02.dir/main.cpp.o CMakeFiles/Project02.dir/Property.cpp.o CMakeFiles/Project02.dir/Graph.cpp.o  -o Project02 

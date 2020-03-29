@@ -42,4 +42,33 @@ void Graph::buildMatrix() {
                 clientMatrix[i+1].at(k+1)++;
             }
     }
+
+    //for all columns from 1 to end -1
+    //check if entire column holds zeros.
+    bool noIn = true;
+    for(int col = 1; col < matrixSize - 2; col++) {
+        for (int row = 0; row < matrixSize - 2; row++) {
+            if(clientMatrix[col].at(row) != 0) {
+                noIn = false;
+            }
+        }
+        if(noIn) {
+            clientMatrix[0].at(col)++;
+        }
+        noIn = true;
+    }
+
+    bool noOut = true;
+    for(int row = 1; row < matrixSize - 2; row++) {
+        for (int col = 1; col < matrixSize - 2; col++) {
+            if(clientMatrix[row].at(col) != 0) {
+                noOut = false;
+            }
+        }
+        if(noOut) {
+            clientMatrix[row].at(matrixSize-1)++;
+        }
+        noOut = true;
+    }
+
 }
