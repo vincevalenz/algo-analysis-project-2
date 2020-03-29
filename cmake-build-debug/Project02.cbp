@@ -80,7 +80,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.cpp">
+		<Unit filename="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.cpp">
+			<Option target="Project02"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.h">
+			<Option target="Project02"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.cpp">
+			<Option target="Project02"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.h">
 			<Option target="Project02"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp">

@@ -123,32 +123,59 @@ Project02/fast:
 	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/build
 .PHONY : Project02/fast
 
-RentalForm.o: RentalForm.cpp.o
+Graph.o: Graph.cpp.o
 
-.PHONY : RentalForm.o
+.PHONY : Graph.o
 
 # target to build an object file
-RentalForm.cpp.o:
-	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/RentalForm.cpp.o
-.PHONY : RentalForm.cpp.o
+Graph.cpp.o:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/Graph.cpp.o
+.PHONY : Graph.cpp.o
 
-RentalForm.i: RentalForm.cpp.i
+Graph.i: Graph.cpp.i
 
-.PHONY : RentalForm.i
+.PHONY : Graph.i
 
 # target to preprocess a source file
-RentalForm.cpp.i:
-	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/RentalForm.cpp.i
-.PHONY : RentalForm.cpp.i
+Graph.cpp.i:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/Graph.cpp.i
+.PHONY : Graph.cpp.i
 
-RentalForm.s: RentalForm.cpp.s
+Graph.s: Graph.cpp.s
 
-.PHONY : RentalForm.s
+.PHONY : Graph.s
 
 # target to generate assembly for a file
-RentalForm.cpp.s:
-	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/RentalForm.cpp.s
-.PHONY : RentalForm.cpp.s
+Graph.cpp.s:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/Graph.cpp.s
+.PHONY : Graph.cpp.s
+
+Property.o: Property.cpp.o
+
+.PHONY : Property.o
+
+# target to build an object file
+Property.cpp.o:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/Property.cpp.o
+.PHONY : Property.cpp.o
+
+Property.i: Property.cpp.i
+
+.PHONY : Property.i
+
+# target to preprocess a source file
+Property.cpp.i:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/Property.cpp.i
+.PHONY : Property.cpp.i
+
+Property.s: Property.cpp.s
+
+.PHONY : Property.s
+
+# target to generate assembly for a file
+Property.cpp.s:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/Property.cpp.s
+.PHONY : Property.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Project02"
 	@echo "... edit_cache"
-	@echo "... RentalForm.o"
-	@echo "... RentalForm.i"
-	@echo "... RentalForm.s"
+	@echo "... Graph.o"
+	@echo "... Graph.i"
+	@echo "... Graph.s"
+	@echo "... Property.o"
+	@echo "... Property.i"
+	@echo "... Property.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

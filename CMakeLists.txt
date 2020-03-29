@@ -3,4 +3,4 @@ project(Project02)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Project02 main.cpp RentalForm.hpp)
+add_executable(Project02 main.cpp RentalForm.hpp Property.cpp Property.h Graph.cpp Graph.h)
