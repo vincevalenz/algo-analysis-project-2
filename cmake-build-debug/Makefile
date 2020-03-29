@@ -123,6 +123,60 @@ Project02/fast:
 	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/build
 .PHONY : Project02/fast
 
+ClientParser.o: ClientParser.cpp.o
+
+.PHONY : ClientParser.o
+
+# target to build an object file
+ClientParser.cpp.o:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/ClientParser.cpp.o
+.PHONY : ClientParser.cpp.o
+
+ClientParser.i: ClientParser.cpp.i
+
+.PHONY : ClientParser.i
+
+# target to preprocess a source file
+ClientParser.cpp.i:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/ClientParser.cpp.i
+.PHONY : ClientParser.cpp.i
+
+ClientParser.s: ClientParser.cpp.s
+
+.PHONY : ClientParser.s
+
+# target to generate assembly for a file
+ClientParser.cpp.s:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/ClientParser.cpp.s
+.PHONY : ClientParser.cpp.s
+
+TopologicalSort.o: TopologicalSort.cpp.o
+
+.PHONY : TopologicalSort.o
+
+# target to build an object file
+TopologicalSort.cpp.o:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/TopologicalSort.cpp.o
+.PHONY : TopologicalSort.cpp.o
+
+TopologicalSort.i: TopologicalSort.cpp.i
+
+.PHONY : TopologicalSort.i
+
+# target to preprocess a source file
+TopologicalSort.cpp.i:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/TopologicalSort.cpp.i
+.PHONY : TopologicalSort.cpp.i
+
+TopologicalSort.s: TopologicalSort.cpp.s
+
+.PHONY : TopologicalSort.s
+
+# target to generate assembly for a file
+TopologicalSort.cpp.s:
+	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/TopologicalSort.cpp.s
+.PHONY : TopologicalSort.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Project02"
 	@echo "... edit_cache"
+	@echo "... ClientParser.o"
+	@echo "... ClientParser.i"
+	@echo "... ClientParser.s"
+	@echo "... TopologicalSort.o"
+	@echo "... TopologicalSort.i"
+	@echo "... TopologicalSort.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

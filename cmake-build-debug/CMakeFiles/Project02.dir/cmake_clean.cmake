@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Project02.dir/ClientParser.cpp.o"
+  "CMakeFiles/Project02.dir/TopologicalSort.cpp.o"
   "CMakeFiles/Project02.dir/main.cpp.o"
   "Project02"
   "Project02.pdb"

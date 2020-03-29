@@ -84,7 +84,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/ClientParser.cpp">
+			<Option target="Project02"/>
+		</Unit>
+		<Unit filename="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/ClientParser.hpp">
+			<Option target="Project02"/>
+		</Unit>
 		<Unit filename="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/RentalForm.hpp">
+			<Option target="Project02"/>
+		</Unit>
+		<Unit filename="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/TopologicalSort.cpp">
+			<Option target="Project02"/>
+		</Unit>
+		<Unit filename="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/TopologicalSort.h">
 			<Option target="Project02"/>
 		</Unit>
 		<Unit filename="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/main.cpp">
