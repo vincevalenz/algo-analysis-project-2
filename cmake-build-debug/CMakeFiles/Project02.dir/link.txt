@@ -1,1 +1,1 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/Project02.dir/main.cpp.o CMakeFiles/Project02.dir/RentalForm.cpp.o  -o Project02.exe -Wl,--out-implib,libProject02.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/bin/c++  -g   CMakeFiles/Project02.dir/main.cpp.o CMakeFiles/Project02.dir/TopologicalSort.cpp.o CMakeFiles/Project02.dir/ClientParser.cpp.o  -o Project02 

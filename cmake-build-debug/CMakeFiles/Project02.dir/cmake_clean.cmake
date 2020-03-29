@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Project02.dir/RentalForm.cpp.o"
+  "CMakeFiles/Project02.dir/ClientParser.cpp.o"
+  "CMakeFiles/Project02.dir/TopologicalSort.cpp.o"
   "CMakeFiles/Project02.dir/main.cpp.o"
-  "Project02.exe"
+  "Project02"
   "Project02.pdb"
-  "libProject02.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

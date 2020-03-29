@@ -35,19 +35,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/cygdrive/c/Users/Ari Encarnacion/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe"
+CMAKE_COMMAND = /home/martian/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5233.144/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = "/cygdrive/c/Users/Ari Encarnacion/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe" -E remove -f
+RM = /home/martian/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5233.144/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02"
+CMAKE_SOURCE_DIR = "/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ preinstall:
 CMakeFiles/Project02.dir/all:
 	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/depend
 	$(MAKE) -f CMakeFiles/Project02.dir/build.make CMakeFiles/Project02.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target Project02"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4 "Built target Project02"
 .PHONY : CMakeFiles/Project02.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Project02.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Project02.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/Project02.dir/rule
 
 # Convenience name for target.
