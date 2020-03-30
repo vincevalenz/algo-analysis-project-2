@@ -8,11 +8,11 @@
 void Graph::print() {
     //label matrix
     std::cout << std::left << std::setw(10) << "";
-    std::cout<< std::left << std::setw(8)<< "s" <<  ' ';
+    std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
     for(int i=1; i < matrixSize-1; i++) {
     std::cout << std::left << std::setw(8) << i << ' ';
     }
-    std::cout<< std::left << std::setw(8)<< "e" <<  ' ';
+    std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
     std::cout <<'\n';
 
     //print values in clientMatrix

@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.cpp
-Graph.h
-/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.h
-iomanip
--
-
 /cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.h
 iostream
 -
@@ -22,7 +16,23 @@ vector
 RentalForm.hpp
 /cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
 
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.h
+RentalForm.hpp
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
+vector
+-
+
 /cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
 string
+-
+
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/main.cpp
+iostream
+-
+Property.h
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.h
+Graph.h
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.h
+iomanip
 -
 
