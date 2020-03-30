@@ -19,18 +19,20 @@ int main(int argc, char *argv[]) {
         c = parser.getClient();
     }
 
-    for (int i=0; i<clients.size(); i++){
-        std::cout << "Start Date: " << clients[i].getStartDate()
-                << ", End Date: " << clients[i].getEndDate()
-                << ", Amount: " << clients[i].getAmount()
-                << std::endl;
-    }
-
-
     //build dag from parsed client file
+    std::cout << "testing build DAG\n";
     Graph g(clients);
     g.buildMatrix();
     g.print();
     std::cout << "------------------\n\n";
+
+    std::cout << "testing top sort\n";
+    std::vector<int> sorted = g.topSort();
+    for (int i : sorted){
+        std::cout << sorted[i] << " ";
+    }
+    std::cout << "\n------------------\n\n";
+
+    //testing optimal path -- in progress
     g.getOptimalPath();
 }

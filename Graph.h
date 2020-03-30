@@ -24,6 +24,8 @@ public:
  void print();
  void getOptimalPath();
 
+ std::vector<int> topSort();
+
 private:
     int matrixSize;
     std::vector<RentalForm> clients;
