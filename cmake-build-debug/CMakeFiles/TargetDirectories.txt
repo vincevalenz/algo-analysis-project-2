@@ -1,3 +1,0 @@
-/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles/Project02.dir
-/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles/edit_cache.dir
