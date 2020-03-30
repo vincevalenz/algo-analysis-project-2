@@ -26,6 +26,8 @@ public:
 
  void print();
 
+ std::vector<int> topSort();
+
 private:
     int matrixSize;
     std::vector<RentalForm> clients;
