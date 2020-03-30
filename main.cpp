@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Graph.h"
 #include <fstream>
 #include "RentalForm.hpp"
 #include "ClientParser.hpp"
@@ -25,4 +26,13 @@ int main(int argc, char *argv[]) {
                 << std::endl;
     }
 
+
+    //1. call constructor with client vector
+    //2. call buildMatrix()
+    //3. call print() to check
+    Graph g(clients);
+    g.print();
+    std::cout << "-------------\n";
+    g.buildMatrix();
+    g.print();
 }

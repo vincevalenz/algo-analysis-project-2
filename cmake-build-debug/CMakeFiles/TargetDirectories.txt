@@ -1,3 +1,0 @@
-/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug/CMakeFiles/Project02.dir
-/home/martian/Courses SSU/Spring 2020/CS415 - Algorithm Analysis/CS415_Project02/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -21,7 +21,7 @@ RentalForm ClientParser::getClient() {
 
     try {
         if (inStream >> s >> e >> am)
-            return {s, e, am};
+            return  {s, e, am};
         else
             throw std::runtime_error("Error reading data file. Check format and remove extra new line chars \nExiting...");
     } catch (std::exception &e) {
