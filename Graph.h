@@ -15,7 +15,7 @@ public:
  explicit Graph(std::vector<RentalForm> c): clients{c} {init_clientMatrix();}
 
  void init_clientMatrix() {
-     int default_value = 0;
+     int default_value = -1;
      int M = clients.size() + 2;
      std::vector<std::vector<int>> temp(M, std::vector<int>(M,default_value));
      clientMatrix = temp;

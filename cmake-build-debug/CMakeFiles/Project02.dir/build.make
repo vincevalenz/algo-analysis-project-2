@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/ari/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/cygdrive/c/Users/Ari Encarnacion/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe"
 
 # The command to remove a file.
-RM = "/Users/ari/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/cygdrive/c/Users/Ari Encarnacion/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ari/Desktop/SSU/cs415/CS415_Project02
+CMAKE_SOURCE_DIR = "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug
+CMAKE_BINARY_DIR = "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project02.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/Project02.dir/flags.make
 
 CMakeFiles/Project02.dir/main.cpp.o: CMakeFiles/Project02.dir/flags.make
 CMakeFiles/Project02.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project02.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project02.dir/main.cpp.o -c /Users/ari/Desktop/SSU/cs415/CS415_Project02/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project02.dir/main.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project02.dir/main.cpp.o -c "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/main.cpp"
 
 CMakeFiles/Project02.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project02.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ari/Desktop/SSU/cs415/CS415_Project02/main.cpp > CMakeFiles/Project02.dir/main.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/main.cpp" > CMakeFiles/Project02.dir/main.cpp.i
 
 CMakeFiles/Project02.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project02.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ari/Desktop/SSU/cs415/CS415_Project02/main.cpp -o CMakeFiles/Project02.dir/main.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/main.cpp" -o CMakeFiles/Project02.dir/main.cpp.s
 
 CMakeFiles/Project02.dir/Property.cpp.o: CMakeFiles/Project02.dir/flags.make
 CMakeFiles/Project02.dir/Property.cpp.o: ../Property.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project02.dir/Property.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project02.dir/Property.cpp.o -c /Users/ari/Desktop/SSU/cs415/CS415_Project02/Property.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project02.dir/Property.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project02.dir/Property.cpp.o -c "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.cpp"
 
 CMakeFiles/Project02.dir/Property.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project02.dir/Property.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ari/Desktop/SSU/cs415/CS415_Project02/Property.cpp > CMakeFiles/Project02.dir/Property.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.cpp" > CMakeFiles/Project02.dir/Property.cpp.i
 
 CMakeFiles/Project02.dir/Property.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project02.dir/Property.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ari/Desktop/SSU/cs415/CS415_Project02/Property.cpp -o CMakeFiles/Project02.dir/Property.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Property.cpp" -o CMakeFiles/Project02.dir/Property.cpp.s
 
 CMakeFiles/Project02.dir/Graph.cpp.o: CMakeFiles/Project02.dir/flags.make
 CMakeFiles/Project02.dir/Graph.cpp.o: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project02.dir/Graph.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project02.dir/Graph.cpp.o -c /Users/ari/Desktop/SSU/cs415/CS415_Project02/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project02.dir/Graph.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Project02.dir/Graph.cpp.o -c "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.cpp"
 
 CMakeFiles/Project02.dir/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project02.dir/Graph.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ari/Desktop/SSU/cs415/CS415_Project02/Graph.cpp > CMakeFiles/Project02.dir/Graph.cpp.i
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.cpp" > CMakeFiles/Project02.dir/Graph.cpp.i
 
 CMakeFiles/Project02.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project02.dir/Graph.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ari/Desktop/SSU/cs415/CS415_Project02/Graph.cpp -o CMakeFiles/Project02.dir/Graph.cpp.s
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.cpp" -o CMakeFiles/Project02.dir/Graph.cpp.s
 
 # Object files for target Project02
 Project02_OBJECTS = \
@@ -105,16 +105,16 @@ Project02_OBJECTS = \
 # External object files for target Project02
 Project02_EXTERNAL_OBJECTS =
 
-Project02: CMakeFiles/Project02.dir/main.cpp.o
-Project02: CMakeFiles/Project02.dir/Property.cpp.o
-Project02: CMakeFiles/Project02.dir/Graph.cpp.o
-Project02: CMakeFiles/Project02.dir/build.make
-Project02: CMakeFiles/Project02.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Project02"
+Project02.exe: CMakeFiles/Project02.dir/main.cpp.o
+Project02.exe: CMakeFiles/Project02.dir/Property.cpp.o
+Project02.exe: CMakeFiles/Project02.dir/Graph.cpp.o
+Project02.exe: CMakeFiles/Project02.dir/build.make
+Project02.exe: CMakeFiles/Project02.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Project02.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project02.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Project02.dir/build: Project02
+CMakeFiles/Project02.dir/build: Project02.exe
 
 .PHONY : CMakeFiles/Project02.dir/build
 
@@ -123,6 +123,6 @@ CMakeFiles/Project02.dir/clean:
 .PHONY : CMakeFiles/Project02.dir/clean
 
 CMakeFiles/Project02.dir/depend:
-	cd /Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ari/Desktop/SSU/cs415/CS415_Project02 /Users/ari/Desktop/SSU/cs415/CS415_Project02 /Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug /Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug /Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug/CMakeFiles/Project02.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02" "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02" "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug" "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug" "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/CMakeFiles/Project02.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Project02.dir/depend
 

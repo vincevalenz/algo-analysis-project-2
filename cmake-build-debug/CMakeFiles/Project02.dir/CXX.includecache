@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/ari/Desktop/SSU/cs415/CS415_Project02/Graph.cpp
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.cpp
 Graph.h
-/Users/ari/Desktop/SSU/cs415/CS415_Project02/Graph.h
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.h
 iomanip
 -
 
-/Users/ari/Desktop/SSU/cs415/CS415_Project02/Graph.h
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/Graph.h
 iostream
 -
 utility
@@ -20,9 +20,9 @@ utility
 vector
 -
 RentalForm.hpp
-/Users/ari/Desktop/SSU/cs415/CS415_Project02/RentalForm.hpp
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
 
-/Users/ari/Desktop/SSU/cs415/CS415_Project02/RentalForm.hpp
+/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/RentalForm.hpp
 string
 -
 

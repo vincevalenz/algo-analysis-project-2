@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ari/Desktop/SSU/cs415/CS415_Project02
+# Install script for directory: /cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/ari/Desktop/SSU/cs415/CS415_Project02/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/c/Users/Ari Encarnacion/Desktop/School/SSU/CS415/CS415_Project02/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
