@@ -12,7 +12,7 @@
 
 class TopologicalSort {
 public:
-    std::vector<RentalForm*> topSort(std::vector<std::vector<int>> clientMatrix, std::vector<RentalForm*> clients);
+    std::vector<RentalForm*> topSort(std::vector<std::vector<int>> clientMatrix, std::vector<RentalForm> &clients);
 
 private:
     std::vector<RentalForm*> stack;
