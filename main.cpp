@@ -1,7 +1,5 @@
 #include <iostream>
-#include "Property.h"
 #include "Graph.h"
-#include <iomanip>
 
 int main() {
 
