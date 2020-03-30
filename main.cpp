@@ -19,12 +19,12 @@ int main(int argc, char *argv[]) {
         c = parser.getClient();
     }
 
-    for (int i=0; i<clients.size(); i++){
-        std::cout << "Start Date: " << clients[i].getStartDate()
-                << ", End Date: " << clients[i].getEndDate()
-                << ", Amount: " << clients[i].getAmount()
-                << std::endl;
-    }
+//    for (int i=0; i<clients.size(); i++){
+//        std::cout << "Start Date: " << clients[i].getStartDate()
+//                << ", End Date: " << clients[i].getEndDate()
+//                << ", Amount: " << clients[i].getAmount()
+//                << std::endl;
+//    }
 
 
     //1. call constructor with client vector
@@ -35,4 +35,9 @@ int main(int argc, char *argv[]) {
     std::cout << "-------------\n";
     g.buildMatrix();
     g.print();
+
+    std::vector<int> sorted = g.topSort();
+    for (int i : sorted){
+        std::cout << sorted[i] << " ";
+    }
 }

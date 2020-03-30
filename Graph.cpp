@@ -4,6 +4,7 @@
 
 #include "Graph.h"
 #include <iomanip>
+#include <queue>
 
 void Graph::print() {
     //label matrix
@@ -73,4 +74,59 @@ void Graph::buildMatrix() {
         }
         noOut = true;
     }
+}
+
+// Topological Sorting
+std::vector<int> Graph::topSort() {
+    int size = clientMatrix.size();
+    int n;
+    std::queue<int> q;
+    std::vector<int> sorted;
+    std::vector<int> edgeCount(size, 0);
+    std::vector< std::vector<int> > nodes;
+
+
+    for (int v=0; v < size; v++) {
+        std::vector<int> edgeList;
+        for (int i=0; i<size; i++) {
+            if (clientMatrix[v][i] >= 0) {
+                edgeCount[i]++;
+                edgeList.push_back(i);
+            }
+        }
+        nodes.push_back(edgeList);
+    }
+
+//    for (int i=0; i<nodes.size(); i++) {
+//        std::cout <<  i << ": ";
+//        for (int j=0; j<nodes[i].size(); j++)
+//            std::cout << nodes[i][j] << " ";
+//        std::cout << " | Edge Count: " << edgeCount[i] << std::endl;
+//    }
+
+    for (int i=0; i<size; i++) {
+        if (edgeCount[i] == 0)
+            q.push(i);
+    }
+
+    while (!q.empty()) {
+        n = q.front();
+        std::cout << n << " ";
+        for(int i=0; i<(int)nodes[n].size(); i++) {
+            edgeCount[nodes[n][i]]--;
+            if (edgeCount[nodes[n][i]] == 0)
+                q.push(nodes[n][i]);
+        }
+        sorted.push_back(n);
+        q.pop();
+    }
+//    std::cout << std::endl;
+//    for (int i=0; i<nodes.size(); i++) {
+//        std::cout <<  i << ": ";
+//        for (int j=0; j<nodes[i].size(); j++)
+//            std::cout << nodes[i][j] << " ";
+//        std::cout << " | Edge Count: " << edgeCount[i] << std::endl;
+//    }
+
+    return sorted;
 }
