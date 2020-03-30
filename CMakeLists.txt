@@ -3,4 +3,4 @@ project(Project02)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Project02 main.cpp RentalForm.hpp Graph.cpp Graph.h)
+add_executable(Project02 main.cpp RentalForm.hpp TopologicalSort.cpp TopologicalSort.h ClientParser.cpp ClientParser.hpp Graph.cpp Graph.h)
