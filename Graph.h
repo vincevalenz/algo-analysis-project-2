@@ -27,11 +27,14 @@ public:
  void print();
 
  std::vector<int> topSort();
+ std::vector< std::vector<int> > getNodes();
+
 
 private:
     int matrixSize;
     std::vector<RentalForm> clients;
     std::vector<std::vector<int>> clientMatrix;
+    std::vector< std::vector<int> > nodes;
 
 
 };
