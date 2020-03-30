@@ -114,7 +114,6 @@ std::vector<int> Graph::topSort() {
     std::queue<int> q;
     std::vector<int> sorted;
     std::vector<int> edgeCount(size, 0);
-    std::vector< std::vector<int> > nodes;
 
 
     for (int v=0; v < size; v++) {
@@ -160,4 +159,8 @@ std::vector<int> Graph::topSort() {
 //    }
 
     return sorted;
+}
+
+std::vector< std::vector<int> > Graph::getNodes() {
+    return nodes;
 }
