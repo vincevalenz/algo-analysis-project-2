@@ -6,12 +6,12 @@
 #define PROJECT02_RENTALFORM_HPP
 
 
-//#include <vector>
+#include <string>
 
 class RentalForm {
 public:
     RentalForm(): startDate{-1}, endDate{-1}, amount{-1}{}
-    RentalForm(int start, int end, int amt): startDate{start}, endDate{end}, amount{amt}{}
+    RentalForm(int s, int e, int a) : startDate{s}, endDate{e}, amount{a}{}
     int getStartDate() { return startDate; }
     int getEndDate() { return endDate; }
     int getAmount() { return amount; }
