@@ -4,13 +4,14 @@
 
 #include "Graph.h"
 #include <iomanip>
+#include <cmath>
 
 void Graph::print() {
     //label matrix
     std::cout << std::left << std::setw(10) << "";
     std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
     for(int i=1; i < matrixSize-1; i++) {
-    std::cout << std::left << std::setw(8) << i << ' ';
+    std::cout << std::left << std::setw(8) << i-1 << ' ';
     }
     std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
     std::cout <<'\n';
@@ -18,11 +19,11 @@ void Graph::print() {
     //print values in clientMatrix
     for(int i= 0; i < matrixSize; i++) {
         if(i == 0) {
-            std::cout<< std::left << std::setw(8)<< "s" <<  ' ';
+            std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
         } else if (i == matrixSize-1) {
-            std::cout<< std::left << std::setw(8)<< "e" <<  ' ';
+            std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
         } else {
-            std::cout << std::left << std::setw(8) << i << ' ';
+            std::cout << std::left << std::setw(8) << i-1 << ' ';
         }
 
         for(int k=0; k < matrixSize; k++) {
@@ -31,6 +32,7 @@ void Graph::print() {
         std::cout<<'\n';
     }
 }
+
 
 void Graph::buildMatrix() {
     //connect inner nodes
@@ -73,4 +75,37 @@ void Graph::buildMatrix() {
         }
         noOut = true;
     }
+}
+
+
+void Graph::getOptimalPath() {
+    std::cout << "Testing Graph::getOptimalPath()\n";
+    for(int i = 0; i < clients.size(); i++) {
+        std::cout << "client [" << i << "]:\n";
+        std::cout << "   start: " << clients.at(i).getStartDate() << '\n';
+        std::cout << "   end: " << clients.at(i).getEndDate() << '\n';
+        std::cout << "   pay: " << clients.at(i).getAmount() << '\n';
+    }
+
+    //build rev_P
+    std::vector<RentalForm> rev_P;
+    RentalForm end(INFINITY,INFINITY,0);
+    rev_P.push_back(end);
+    for(int i = clients.size()-1; i >= 0; i--) {
+        rev_P.push_back(clients.at(i));
+    }
+    RentalForm start(0,0,0);
+    rev_P.push_back(start);
+    
+
+    std::cout << "rev_P vector ------\n";
+    for(int i = 0; i < rev_P.size(); i++) {
+        std::cout << "client [" << i << "]:\n";
+        std::cout << "   start: " << rev_P.at(i).getStartDate() << '\n';
+        std::cout << "   end: " << rev_P.at(i).getEndDate() << '\n';
+        std::cout << "   pay: " << rev_P.at(i).getAmount() << '\n';
+    }
+    std::cout << "rev_P vector ------\n";
+
+
 }

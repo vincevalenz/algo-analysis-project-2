@@ -29,8 +29,8 @@ int main(int argc, char *argv[]) {
 
     //build dag from parsed client file
     Graph g(clients);
-    g.print();
-    std::cout << "-------------\n";
     g.buildMatrix();
     g.print();
+    std::cout << "------------------\n\n";
+    g.getOptimalPath();
 }

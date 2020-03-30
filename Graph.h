@@ -13,7 +13,6 @@
 class Graph {
 public:
  explicit Graph(std::vector<RentalForm> c): clients{c} {init_clientMatrix();}
-
  void init_clientMatrix() {
      int default_value = -1;
      int M = clients.size() + 2;
@@ -21,10 +20,9 @@ public:
      clientMatrix = temp;
      matrixSize = clients.size() + 2;
  }
-
  void buildMatrix();
-
  void print();
+ void getOptimalPath();
 
 private:
     int matrixSize;
