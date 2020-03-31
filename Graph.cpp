@@ -44,7 +44,7 @@ void Graph::buildMatrix() {
                 clientMatrix[i+1].at(k+1) = clients.at(i).getAmount();
             }
     }
-print();
+
     //connect start node
     //traverses matrix
     bool noIn = true;
@@ -59,8 +59,6 @@ print();
             clientMatrix[0].at(col) = 0;
         }
         noIn = true;
-        print();
-        std::cout<<"------\n";
     }
 
     //connect end node
@@ -82,7 +80,67 @@ print();
 
 void Graph::getOptimalPath() {
 
+        std::cout << "testing top sort\n";
+    std::vector<int> sorted = topSort();
+    for (int i : sorted){
+        std::cout << sorted[i] << " ";
+    }
+    std::cout << "\n------------------\n\n";
+
+
+    std::cout << "testing nodes\n";
+    for (int i = 0; i < nodes.size(); i++) {
+        if (nodes[i].empty()) {
+            std::cout << "EMPTY";
+        }
+
+        for (int j = 0; j < nodes[i].size(); j++) {
+            std::cout << nodes[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+
+    //Traverse topological sort in REVERSE
+    std::vector<int> maxAmounts;
+    for(int topIdx = int(sorted.size()) - 1; topIdx >= 0; topIdx--) {
+        int maxOfCurIdx = F(topIdx);
+        maxAmounts.push_back(maxOfCurIdx);
+    }
+    for(auto & amt: maxAmounts) {
+        std::cout << amt << ' ';
+    }
 }
+
+int Graph::F(int n) {
+    // If end node
+    if(n == nodes.size() - 1) {
+        return 0;
+    }
+
+    if(n > 0) {
+        if(nodes.at(n).size() > 1) {
+            std::vector<int> possibleMax;
+            // go through all possible nodes and get all values
+            for(int i = 0; i < nodes.at(n).size(); i++) {
+               possibleMax.push_back(F(i));
+            }
+
+            int chosenMax = -1;
+            for(auto & num: possibleMax) {
+                if (num > chosenMax)
+                     chosenMax = num;
+            }
+            return chosenMax;
+        }
+
+        return F(nodes[n][0]) + clients.at(n - 1).getAmount();
+    }
+
+    //If start node
+    return F(n + 1);
+}
+
 
 
 

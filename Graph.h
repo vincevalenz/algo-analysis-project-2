@@ -23,8 +23,8 @@ public:
  void buildMatrix();
  void print();
  void getOptimalPath();
-
  std::vector<int> topSort();
+ int F(int);
  std::vector< std::vector<int> > getNodes();
 
 
