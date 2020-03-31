@@ -38,4 +38,7 @@ int main(int argc, char *argv[]) {
 
     //testing optimal path -- in progress
     g.getOptimalPath();
+
+    std::cout << std::endl;
+    std::cout << "Total payment is: " << g.getTotalPayment();
 }
