@@ -82,11 +82,10 @@ void Graph::getOptimalPath() {
 
         std::cout << "testing top sort\n";
     std::vector<int> sorted = topSort();
-    for (int i : sorted){
-        std::cout << sorted[i] << " ";
+    for (auto & num: sorted){
+        std::cout << num << " ";
     }
     std::cout << "\n------------------\n\n";
-
 
     std::cout << "testing nodes\n";
     for (int i = 0; i < nodes.size(); i++) {
@@ -100,12 +99,12 @@ void Graph::getOptimalPath() {
         std::cout << std::endl;
     }
 
-
     //Traverse topological sort in REVERSE
     std::vector<int> maxAmounts;
     for(int topIdx = int(sorted.size()) - 1; topIdx >= 0; topIdx--) {
-        int maxOfCurIdx = F(topIdx);
-        maxAmounts.push_back(maxOfCurIdx);
+        int maxOfCurIdx = F(sorted.at(topIdx));
+        std::vector<int>::iterator it = maxAmounts.begin();
+        maxAmounts.insert(it, maxOfCurIdx);
     }
     for(auto & amt: maxAmounts) {
         std::cout << amt << ' ';
@@ -118,27 +117,23 @@ int Graph::F(int n) {
         return 0;
     }
 
-    if(n > 0) {
-        if(nodes.at(n).size() > 1) {
-            std::vector<int> possibleMax;
-            // go through all possible nodes and get all values
-            for(int i = 0; i < nodes.at(n).size(); i++) {
-               possibleMax.push_back(F(i));
-            }
 
-            int chosenMax = -1;
-            for(auto & num: possibleMax) {
-                if (num > chosenMax)
-                     chosenMax = num;
-            }
-            return chosenMax;
+    if(nodes.at(n).size() > 1) {
+        std::vector<int> possibleMax;
+        // go through all possible nodes and get all values
+        for(int i = 0; i < nodes.at(n).size(); i++) {
+           possibleMax.push_back(F(nodes[n].at(i)));
         }
 
-        return F(nodes[n][0]) + clients.at(n - 1).getAmount();
+        int chosenMax = -1;
+        for(auto & num: possibleMax) {
+            if (num > chosenMax)
+                 chosenMax = num;
+        }
+        return chosenMax;
     }
 
-    //If start node
-    return F(n + 1);
+    return F(nodes[n][0]) + clients.at(n - 1).getAmount();
 }
 
 
