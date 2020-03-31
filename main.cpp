@@ -26,22 +26,19 @@ int main(int argc, char *argv[]) {
     g.print();
     std::cout << "------------------\n\n";
 
-    std::cout << "testing top sort\n";
-    std::vector<int> sorted = g.topSort();
-    for (int i : sorted){
-        std::cout << sorted[i] << " ";
-    }
-    std::cout << "\n------------------\n\n";
+//    std::cout << "testing top sort\n";
+//    std::vector<int> sorted = g.topSort();
+//    for (int i : sorted){
+//        std::cout << sorted[i] << " ";
+//    }
+//    std::cout << "\n------------------\n\n";
 
-    std::cout << "testing nodes\n";
-    std::vector< std::vector<int> > nodes = g.getNodes();
-    for (int i = 0; i < nodes.size(); i++) {
-        for (int j = 0; j < nodes[i].size(); j++)
-            std::cout << nodes[i][j] << " ";
-        std::cout << std::endl;
-    }
+
 
 
     //testing optimal path -- in progress
     g.getOptimalPath();
+
+    std::cout << std::endl;
+    std::cout << "Total payment is: " << g.getTotalPayment();
 }
