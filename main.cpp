@@ -5,10 +5,10 @@
 #include "ClientParser.hpp"
 
 int main(int argc, char *argv[]) {
-    if ( argc != 2){
-        std::cout << "Usage: " << argv[0] << " nameOfInputFile" << std::endl;
-        exit(1);
-    }
+//    if ( argc != 2){
+//        std::cout << "Usage: " << argv[0] << " nameOfInputFile" << std::endl;
+//        exit(1);
+//    }
 
     ClientParser parser(argv[1]);
     std::vector<RentalForm> clients;
