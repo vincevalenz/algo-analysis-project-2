@@ -28,6 +28,7 @@ public:
  std::vector< std::vector<int> > getNodes();
  int getIdxOf(std::vector<int>, int n);
  int getMaxOf( std::vector<int>);
+ int getNumOfClients();
  int getTotalPayment();
  std::vector<int> getFinalClients();
 
