@@ -84,59 +84,54 @@ void Graph::buildMatrix() {
 
 void Graph::getOptimalPath() {
 
-
-    std::cout << "testing top sort\n";
     topSort();
-    for (auto & num: ts){
-        std::cout << num << " ";
-    }
+//    std::cout << "testing top sort\n";
+//    for (auto & num: ts){
+//        std::cout << num << " ";
+//    }
+//    std::cout << "\n------------------\n\n";
 
-    std::cout << "\n------------------\n\n";
-
-    std::cout << "testing nodes\n";
-    for (int i = 0; i < nodes.size(); i++) {
-        if (nodes[i].empty()) {
-            std::cout << "EMPTY";
-        }
-
-        for (int j = 0; j < nodes[i].size(); j++) {
-            std::cout << nodes[i][j] << " ";
-        }
-        std::cout << std::endl;
-    }
-    std::cout << std::endl;
+//    std::cout << "testing nodes\n";
+//    for (int i = 0; i < nodes.size(); i++) {
+//        if (nodes[i].empty()) {
+//            std::cout << "EMPTY";
+//        }
+//
+//        for (int j = 0; j < nodes[i].size(); j++) {
+//            std::cout << nodes[i][j] << " ";
+//        }
+//        std::cout << std::endl;
+//    }
+//    std::cout << std::endl;
 
     //Traverse topological sort in REVERSE
     P.resize(ts.size()); // P resized to topSort vector for later storage
     for(int idx = int(ts.size()) - 1; idx >= 0; idx--) {
         int maxOfIdx = F(ts.at(idx));
-//        auto it = f_array.begin();
-//        f_array.insert(it, maxOfIdx);
         f_array.push_back(maxOfIdx);
     }
     std::reverse(f_array.begin(), f_array.end());
 
-    std::cout << "f_array is: ";
-    for(auto & amt: f_array) {
-        std::cout << amt << ' ';
-    }
-    std::cout << '\n';
-
-    std::cout << "topSort is: ";
-    for (auto & num: ts){
-        std::cout << num << " ";
-    }
-    std::cout << '\n';
+//    std::cout << "f_array is: ";
+//    for(auto & amt: f_array) {
+//        std::cout << amt << ' ';
+//    }
+//    std::cout << '\n';
+//    std::cout << "topSort is: ";
+//    for (auto & num: ts){
+//        std::cout << num << " ";
+//    }
+//    std::cout << '\n';
 
     for(int i = 0; i < P.size(); i++) {
         P.at(i) = getMaxOf(nodes[ts.at(i)]);
     }
 
-    std::cout << "P array is: ";
-    for(auto & p: P) {
-        std::cout << p << ' ';
-    }
-    std::cout << '\n';
+//    std::cout << "P array is: ";
+//    for(auto & p: P) {
+//        std::cout << p << ' ';
+//    }
+//    std::cout << '\n';
 
     path.push_back(0);
     int n = P.at(0);
@@ -145,11 +140,11 @@ void Graph::getOptimalPath() {
         n = P.at(getIdxOf(ts, n));
     }
 
-    std::cout << "path array is: ";
-    for(auto & entry: path) {
-        std::cout << entry << ' ';
-    }
-    std::cout << '\n';
+//    std::cout << "path array is: ";
+//    for(auto & entry: path) {
+//        std::cout << entry << ' ';
+//    }
+//    std::cout << '\n';
 }
 
 
@@ -161,7 +156,12 @@ int Graph::getTotalPayment() {
 
 
 std::vector<int> Graph::getFinalClients() {
+    return path;
+}
 
+
+int Graph::getNumOfClients() {
+    return clients.size();
 }
 
 

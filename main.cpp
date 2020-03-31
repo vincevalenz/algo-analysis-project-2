@@ -5,10 +5,10 @@
 #include "ClientParser.hpp"
 
 int main(int argc, char *argv[]) {
-    if ( argc != 2){
-        std::cout << "Usage: " << argv[0] << " nameOfInputFile" << std::endl;
-        exit(1);
-    }
+//    if ( argc != 2){
+//        std::cout << "Usage: " << argv[0] << " nameOfInputFile" << std::endl;
+//        exit(1);
+//    }
 
     ClientParser parser(argv[1]);
     std::vector<RentalForm> clients;
@@ -20,25 +20,29 @@ int main(int argc, char *argv[]) {
     }
 
     //build dag from parsed client file
-    std::cout << "testing build DAG\n";
+//    std::cout << "testing build DAG\n";
     Graph g(clients);
     g.buildMatrix();
-    g.print();
-    std::cout << "------------------\n\n";
-
-//    std::cout << "testing top sort\n";
-//    std::vector<int> sorted = g.topSort();
-//    for (int i : sorted){
-//        std::cout << sorted[i] << " ";
-//    }
-//    std::cout << "\n------------------\n\n";
-
-
-
+//    g.print();
+//    std::cout << "------------------\n\n";
 
     //testing optimal path -- in progress
     g.getOptimalPath();
 
+    std::cout << "There are " << g.getNumOfClients() << " clients in this file.\n";
+
     std::cout << std::endl;
-    std::cout << "Total payment is: " << g.getTotalPayment();
+    int revenue = g.getTotalPayment();
+    std::cout << "Optimal revenue earned is " << revenue;
+    std::cout << std::endl;
+
+    std::cout << "Clients contributing to this optimal revenue: ";
+    std::vector<int> optimalClients = g.getFinalClients();
+    for(int i = 1; i < int(optimalClients.size()) - 1; i++) {
+        if(i < int(optimalClients.size()) - 2)
+            std::cout << optimalClients[i] << ", ";
+        else
+            std::cout << optimalClients[i];
+    }
+    std::cout << std::endl;
 }
