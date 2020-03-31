@@ -19,25 +19,29 @@ int main(int argc, char *argv[]) {
         c = parser.getClient();
     }
 
-//    for (int i=0; i<clients.size(); i++){
-//        std::cout << "Start Date: " << clients[i].getStartDate()
-//                << ", End Date: " << clients[i].getEndDate()
-//                << ", Amount: " << clients[i].getAmount()
-//                << std::endl;
-//    }
-
-
-    //1. call constructor with client vector
-    //2. call buildMatrix()
-    //3. call print() to check
+    //build dag from parsed client file
+    std::cout << "testing build DAG\n";
     Graph g(clients);
-    g.print();
-    std::cout << "-------------\n";
     g.buildMatrix();
     g.print();
+    std::cout << "------------------\n\n";
 
+    std::cout << "testing top sort\n";
     std::vector<int> sorted = g.topSort();
     for (int i : sorted){
         std::cout << sorted[i] << " ";
     }
+    std::cout << "\n------------------\n\n";
+
+    std::cout << "testing nodes\n";
+    std::vector< std::vector<int> > nodes = g.getNodes();
+    for (int i = 0; i < nodes.size(); i++) {
+        for (int j = 0; j < nodes[i].size(); j++)
+            std::cout << nodes[i][j] << " ";
+        std::cout << std::endl;
+    }
+
+
+    //testing optimal path -- in progress
+    g.getOptimalPath();
 }

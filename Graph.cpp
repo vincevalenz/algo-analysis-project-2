@@ -4,6 +4,7 @@
 
 #include "Graph.h"
 #include <iomanip>
+#include <cmath>
 #include <queue>
 
 void Graph::print() {
@@ -11,7 +12,7 @@ void Graph::print() {
     std::cout << std::left << std::setw(10) << "";
     std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
     for(int i=1; i < matrixSize-1; i++) {
-    std::cout << std::left << std::setw(8) << i << ' ';
+    std::cout << std::left << std::setw(8) << i-1 << ' ';
     }
     std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
     std::cout <<'\n';
@@ -19,11 +20,11 @@ void Graph::print() {
     //print values in clientMatrix
     for(int i= 0; i < matrixSize; i++) {
         if(i == 0) {
-            std::cout<< std::left << std::setw(8)<< "s" <<  ' ';
+            std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
         } else if (i == matrixSize-1) {
-            std::cout<< std::left << std::setw(8)<< "e" <<  ' ';
+            std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
         } else {
-            std::cout << std::left << std::setw(8) << i << ' ';
+            std::cout << std::left << std::setw(8) << i-1 << ' ';
         }
 
         for(int k=0; k < matrixSize; k++) {
@@ -32,6 +33,7 @@ void Graph::print() {
         std::cout<<'\n';
     }
 }
+
 
 void Graph::buildMatrix() {
     //connect inner nodes
@@ -42,11 +44,11 @@ void Graph::buildMatrix() {
                 clientMatrix[i+1].at(k+1) = clients.at(i).getAmount();
             }
     }
-
+print();
     //connect start node
     //traverses matrix
     bool noIn = true;
-    for(int col = 1; col < matrixSize - 2; col++) {
+    for(int col = 1; col < matrixSize - 1; col++) {
         for (int row = 0; row < matrixSize - 1; row++) {
             int x = clientMatrix[row].at(col);
             if(clientMatrix[row].at(col) != -1) {
@@ -57,6 +59,8 @@ void Graph::buildMatrix() {
             clientMatrix[0].at(col) = 0;
         }
         noIn = true;
+        print();
+        std::cout<<"------\n";
     }
 
     //connect end node
@@ -75,6 +79,14 @@ void Graph::buildMatrix() {
         noOut = true;
     }
 }
+
+void Graph::getOptimalPath() {
+
+}
+
+
+
+
 
 // Topological Sorting
 std::vector<int> Graph::topSort() {
@@ -110,7 +122,7 @@ std::vector<int> Graph::topSort() {
 
     while (!q.empty()) {
         n = q.front();
-        std::cout << n << " ";
+//        std::cout << n << " ";
         for(int i=0; i<(int)nodes[n].size(); i++) {
             edgeCount[nodes[n][i]]--;
             if (edgeCount[nodes[n][i]] == 0)
