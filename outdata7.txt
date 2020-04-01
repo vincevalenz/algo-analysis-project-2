@@ -1,4 +1,0 @@
-There are 101 clients in this file.
-
-Optimal revenue earned is 258
-Clients contributing to this optimal revenue: 44, 48, 54, 58, 62, 102, 39, 44, 48, 54, 58, 62

@@ -17,10 +17,14 @@ for example:
 70 60 23
 ```
 
+Example input can be found in the included **data(num).txt** files.
+
 ### Output
 
 The program will output a file named `out<inputfile>.txt` where `<inputfile>`  is the name of the file a user choses to input.
+All output files for `data.zip` will be in the `data_output` directory. 
 
+Example output can be found in the included **outdata(num).txt** files.
 
 ### Running the program
 
@@ -31,7 +35,7 @@ Follow these steps to run the program.
 - Run the following commands to build the project.
 ```
 $ git clone https://github.com/vinnyvalenz/CS415_Project02.git
-$ cd CS415_Proejct02
+$ cd CS415_Project02
 $ make
 ```
 
@@ -48,4 +52,4 @@ $ make
 
 ### Implementation
 
-The program parses a client file and creates a DAG. The DAG is represented in an **adjacency matrix** (extra credit not implemented). An array of all connnected nodes is generated using a topological sort of the DAG. The longest (highest cost) path is then calculated using that array.
+The program parses a client file and creates a DAG. The DAG is represented in an **adjacency matrix** (extra credit not implemented). An array of all connnected nodes is generated using a **queue-based decrease-by-one** (extra credit applicable) topological sort of the DAG. The longest (highest cost) path is then calculated using that array.
