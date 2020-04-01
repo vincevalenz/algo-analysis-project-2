@@ -31,7 +31,7 @@ Follow these steps to run the program.
 - Run the following commands to build the project.
 ```
 $ git clone https://github.com/vinnyvalenz/CS415_Project02.git
-$ cd CS415_Proejct02
+$ cd CS415_Project02
 $ make
 ```
 
