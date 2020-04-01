@@ -17,10 +17,13 @@ for example:
 70 60 23
 ```
 
+Example input can be found in the included **data*.txt** files.
+
 ### Output
 
 The program will output a file named `out<inputfile>.txt` where `<inputfile>`  is the name of the file a user choses to input.
 
+Example output can be found in the included **outdata*.txt** files.
 
 ### Running the program
 
