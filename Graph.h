@@ -34,6 +34,7 @@ private:
      void debug_printMatrix();
 
     int matrixSize;
+    int revenue = -1;
     std::vector<RentalForm> clients;
     std::vector<std::vector<int>> clientMatrix;
     std::vector< std::vector<int> > nodes;

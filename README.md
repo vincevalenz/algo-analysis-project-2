@@ -20,6 +20,7 @@ for example:
 ### Output
 
 The program will output a file named `out<inputfile>.txt` where `<inputfile>`  is the name of the file a user choses to input.
+All output files for `data.zip` will be in the `data_output` directory. 
 
 
 ### Running the program
@@ -48,4 +49,4 @@ $ make
 
 ### Implementation
 
-The program parses a client file and creates a DAG. The DAG is represented in an **adjacency matrix** (extra credit not implemented). An array of all connnected nodes is generated using a topological sort of the DAG. The longest (highest cost) path is then calculated using that array.
+The program parses a client file and creates a DAG. The DAG is represented in an **adjacency matrix** (extra credit not implemented). An array of all connnected nodes is generated using a **queue-based decrease-by-one** (extra credit applicable) topological sort of the DAG. The longest (highest cost) path is then calculated using that array.

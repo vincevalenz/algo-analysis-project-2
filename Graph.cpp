@@ -131,6 +131,8 @@ void Graph::getOptPath() {
 }
 
 int Graph::getTotalPayment() {
+    if (revenue > -1)
+        return revenue;
     int v = 0;
     int rev = 0;
     while (v < (int)clients.size()-1) {
@@ -138,7 +140,8 @@ int Graph::getTotalPayment() {
         path.push_back(P[v]);
         v = P[v];
     }
-    return rev;
+    revenue = rev;
+    return revenue;
 }
 
 std::vector<int> Graph::getFinalClients() {
@@ -153,8 +156,7 @@ void Graph::print_result() {
     std::cout << "There are " << getNumOfClients() << " clients in this file.\n";
 
     std::cout << std::endl;
-    int revenue = getTotalPayment();
-    std::cout << "Optimal revenue earned is " << revenue;
+    std::cout << "Optimal revenue earned is " << getTotalPayment();
     std::cout << std::endl;
 
     std::cout << "Clients contributing to this optimal revenue: ";
