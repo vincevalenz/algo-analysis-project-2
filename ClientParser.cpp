@@ -14,7 +14,6 @@ ClientParser::ClientParser(std::string file) {
 }
 
 RentalForm ClientParser::getClient() {
-
     while (std::isspace(inStream.peek()))
         inStream.get();
 

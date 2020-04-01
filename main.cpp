@@ -27,18 +27,12 @@ int main(int argc, char *argv[]) {
     }
 
     //build dag from parsed client file
-//    std::cout << "testing build DAG\n";
     Graph g(clients);
     g.buildMatrix();
-//    g.print();
-//    std::cout << "------------------\n\n";
 
-    //testing optimal path -- in progress
-    //g.getOptimalPath();
-    g.topSort();
-    g.getOptPath();
-    g.print_final();
+    //get optimal path and print result
+    g.getPath();
+    g.print_result();
 
     write_to_file(g, file);
-
 }
