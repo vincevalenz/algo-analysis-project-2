@@ -1,5 +1,5 @@
 //
-// Created by Ari Encarnacion on 3/28/2020.
+// Created by Ari Encarnacion and Vincent Valenzuela on 3/28/2020.
 //
 
 #include "Graph.h"
