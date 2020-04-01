@@ -26,25 +26,25 @@ The program will output a file named `out<inputfile>.txt` where `<inputfile>`  i
 
 Follow these steps to run the program.
 
-1. Add all input files to the `CS415_Project02` directory.
+- Add all input files to the `CS415_Project02` directory.
 
-2. Run the following commands to build the project.
+- Run the following commands to build the project.
 ```
 $ git clone https://github.com/vinnyvalenz/CS415_Project02.git
 $ cd CS415_Proejct02
 $ make
 ```
 
-3. Run this command to execute the program.
+- Run this command to execute the program.
 `$ ./optimalPath.x`
 
-4. Once the program is running you'll be prompted with:
+- Once the program is running you'll be prompted with:
 `Enter the file to read data:`
 
-Enter the name of the file to be read. For example:
-`Enter the file to read data: data2.txt`
+	- Enter the name of the file to be read. For example: 
+	`Enter the file to read data: data2.txt`
 
-5. The program will generate ouput in the console and generate/write the output file.
+- The program will generate ouput in the console and generate/write the output file.
 
 #### Implementation
 
