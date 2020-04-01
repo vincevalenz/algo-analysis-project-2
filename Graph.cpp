@@ -78,17 +78,7 @@ void Graph::topSort() {
         if (edgeCount[i] == 0)
             q.push(i);
     }
-    int k = 0;
-    while (k < (int)edgeCount.size()) {
-        std::cout << k << std::setw(4);
-        k++;
-    }
-    std::cout << "\n";
 
-    for (auto & v : edgeCount) {
-        std::cout << v << std::setw(4);
-    }
-    std::cout << "\n";
     while (!q.empty()) {
         n = q.front();
         for(int i=0; i<(int)nodes[n].size(); i++) {
@@ -99,28 +89,6 @@ void Graph::topSort() {
         sorted.push_back(n);
         q.pop();
     }
-    std::cout << "sorted\n";
-    for (auto & v : sorted) {
-        std::cout << v << std::setw(4);
-    }
-
-    std::cout << "\n\n";
-
-    for (int i=0; i<(int)clients.size(); i++)
-        std::cout << i << ":" << clients[i].getAmount() << "  ";
-    std::cout << "\n\n";
-    for (int i=0; i<(int)nodes.size(); i++) {
-        if (i == 0) std::cout << "S" <<  std::setw(6);
-        else if (i == (int)nodes.size()-1) std::cout << "E     0";
-        else if (i < 10) std::cout << i << std::setw(6);
-        else std::cout << i << std::setw(5);
-        //std::cout << "EC:" << edgeCount[i] << std::left <<  std::setw(4);
-        for (auto & p : nodes[i]) {
-            std::cout << p << ":" << clients[p-1].getAmount() << "  ";
-        }
-        std::cout << std::endl;
-    }
-
     ts = sorted;
 }
 
@@ -162,17 +130,6 @@ void Graph::getOptPath() {
         weight[v] = W;
         opath[v] = p;
     }
-    for (auto & w : weight) std::cout << std::setw(6) << w ;
-    std::cout << "   weight\n\n";
-    for (auto & w : opath) std::cout << std::setw(6) << w ;
-    std::cout << "   path\n\n";
-    for (auto & w : wRef) std::cout << std::setw(6) << w ;
-    std::cout << "   wRef\n\n";
-    for (int i=0; i<end+1; i++) std::cout << std::setw(6) << i ;
-    std::cout << "   index\n\n";
-    for (auto & v : ts) std::cout << std::setw(6) << v;
-    std::cout << "   sorted\n";
-
     P = opath;
     rts = wRef;
 }
@@ -211,9 +168,9 @@ void Graph::print_result() {
     for(auto & c : path) {
         numOfClients--;
         if(numOfClients == 0)
-            std::cout << c << ":" << clients[c-1].getAmount();
+            std::cout << c;
         else
-            std::cout << c << ":" << clients[c-1].getAmount() << ", ";
+            std::cout << c << ", ";
 
     }
     std::cout << std::endl;
