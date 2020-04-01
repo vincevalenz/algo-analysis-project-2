@@ -1,5 +1,5 @@
 //
-// Created by Vincent Valenzuela on 3/29/20.
+// Created by Vincent Valenzuela and Ari Encarnacion on 3/29/20.
 //
 
 #include "ClientParser.hpp"
@@ -14,6 +14,9 @@ ClientParser::ClientParser(std::string file) {
 }
 
 RentalForm ClientParser::getClient() {
+
+    while (std::isspace(inStream.peek()))
+        inStream.get();
 
     if (inStream.eof()) {
         return {};

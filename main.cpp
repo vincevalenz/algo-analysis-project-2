@@ -1,16 +1,23 @@
+//
+// Created by Vincent Valenzuela and Ari Encarnacion on 3/29/20.
+//
+
 #include <iostream>
+#include <string>
 #include "Graph.h"
-#include <fstream>
 #include "RentalForm.hpp"
 #include "ClientParser.hpp"
+#include "FileOutput.hpp"
 
 int main(int argc, char *argv[]) {
-//    if ( argc != 2){
-//        std::cout << "Usage: " << argv[0] << " nameOfInputFile" << std::endl;
-//        exit(1);
-//    }
 
-    ClientParser parser(argv[1]);
+    std::string file;
+    std::cout << "Enter the file to read data: ";
+    std::cin >> file;
+    std::cout << std::endl;
+
+
+    ClientParser parser(file);
     std::vector<RentalForm> clients;
     RentalForm c = parser.getClient();
 
@@ -27,22 +34,11 @@ int main(int argc, char *argv[]) {
 //    std::cout << "------------------\n\n";
 
     //testing optimal path -- in progress
-    g.getOptimalPath();
+    //g.getOptimalPath();
+    g.topSort();
+    g.getOptPath();
+    g.print_final();
 
-    std::cout << "There are " << g.getNumOfClients() << " clients in this file.\n";
+    write_to_file(g, file);
 
-    std::cout << std::endl;
-    int revenue = g.getTotalPayment();
-    std::cout << "Optimal revenue earned is " << revenue;
-    std::cout << std::endl;
-
-    std::cout << "Clients contributing to this optimal revenue: ";
-    std::vector<int> optimalClients = g.getFinalClients();
-    for(int i = 1; i < int(optimalClients.size()) - 1; i++) {
-        if(i < int(optimalClients.size()) - 2)
-            std::cout << optimalClients[i] << ", ";
-        else
-            std::cout << optimalClients[i];
-    }
-    std::cout << std::endl;
 }
