@@ -40,6 +40,7 @@ private:
     std::vector< std::vector<int> > nodes;
     std::vector<int> P;
     std::vector<int> ts;
+    std::vector<int> rts;
     std::vector<int> path;
 };
 

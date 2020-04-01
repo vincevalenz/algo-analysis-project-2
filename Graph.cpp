@@ -89,7 +89,6 @@ void Graph::topSort() {
         sorted.push_back(n);
         q.pop();
     }
-
     ts = sorted;
 }
 
@@ -97,6 +96,10 @@ void Graph::getOptPath() {
     int end = (int)ts.size()-1;
     std::vector<int> weight(end+1, 0);
     std::vector<int> opath(end+1, -1);
+    std::vector<int> wRef(end+1, 0);
+    for (int i=0; i<end+1; i++) {
+        wRef[ts[i]] = i;
+    }
     /*
      * nodes index:     0   1   2   3   4   5      <-- order of clients as parsed in
      * weight vals:     w   w   w   w   w   w      <-- highest weight possible for node
@@ -109,17 +112,17 @@ void Graph::getOptPath() {
         int p = end;
         if (v == 0) {
             for (auto & j : nodes[n]) {
-                if (W < weight[j]) {
-                    W = weight[j];
+                if (W < weight[wRef[j]]) {
+                    W = weight[wRef[j]];
                     p = j;
                 }
             }
         }
         else {
             W = clients[n - 1].getAmount();
-            for (auto &j : nodes[v]) {
-                if (W < weight[j] + clients[n - 1].getAmount()) {
-                    W = weight[j] + clients[n - 1].getAmount();
+            for (auto &j : nodes[n]) {
+                if (W < weight[wRef[j]] + clients[n - 1].getAmount()) {
+                    W = weight[wRef[j]] + clients[n - 1].getAmount();
                     p = j;
                 }
             }
@@ -128,6 +131,7 @@ void Graph::getOptPath() {
         opath[v] = p;
     }
     P = opath;
+    rts = wRef;
 }
 
 int Graph::getTotalPayment() {
@@ -135,10 +139,10 @@ int Graph::getTotalPayment() {
         return revenue;
     int v = 0;
     int rev = 0;
-    while (v < (int)clients.size()-1) {
+    while (v < (int)clients.size()) {
         rev += clients[P[v]-1].getAmount();
         path.push_back(P[v]);
-        v = P[v];
+        v = rts[P[v]];
     }
     revenue = rev;
     return revenue;
