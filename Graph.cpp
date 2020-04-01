@@ -8,38 +8,8 @@
 #include <queue>
 #include <algorithm>
 
-void Graph::print() {
-    //label matrix
-    std::cout << std::left << std::setw(10) << "";
-    std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
-    for(int i=1; i < matrixSize-1; i++) {
-    std::cout << std::left << std::setw(8) << i << ' ';
-    }
-    std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
-    std::cout <<'\n';
-
-    //print values in clientMatrix
-    for(int i= 0; i < matrixSize; i++) {
-        if(i == 0) {
-            std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
-        } else if (i == matrixSize-1) {
-            std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
-        } else {
-            std::cout << std::left << std::setw(8) << i << ' ';
-        }
-
-        for(int k=0; k < matrixSize; k++) {
-            std::cout << std::left << std::setw(8) << clientMatrix[i][k] << ' ';
-        }
-        std::cout<<'\n';
-    }
-}
-
-
-
 void Graph::buildMatrix() {
     //connect inner nodes
-    //traverses clients vector
     for(int i = 0; i < clients.size(); i++) {
         for(int k = 0; k < clients.size(); k++)
             if(clients.at(k).getStartDate() >= clients.at(i).getEndDate()) {
@@ -48,7 +18,6 @@ void Graph::buildMatrix() {
     }
 
     //connect start node
-    //traverses matrix
     bool noIn = true;
     for(int col = 1; col < matrixSize - 1; col++) {
         for (int row = 0; row < matrixSize - 1; row++) {
@@ -64,7 +33,6 @@ void Graph::buildMatrix() {
     }
 
     //connect end node
-    //traverses matrix
     bool noOut = true;
     for(int row = 1; row < matrixSize - 1; row++) {
         for (int col = 1; col < matrixSize - 1; col++) {
@@ -80,170 +48,10 @@ void Graph::buildMatrix() {
     }
 }
 
-
-
-void Graph::getOptimalPath() {
-
+void Graph::getPath() {
     topSort();
-//    std::cout << "testing top sort\n";
-//    for (auto & num: ts){
-//        std::cout << num << " ";
-//    }
-//    std::cout << "\n------------------\n\n";
-
-//    std::cout << "testing nodes\n";
-//    for (int i = 0; i < nodes.size(); i++) {
-//        if (nodes[i].empty()) {
-//            std::cout << "EMPTY";
-//        }
-//
-//        for (int j = 0; j < nodes[i].size(); j++) {
-//            std::cout << nodes[i][j] << " ";
-//        }
-//        std::cout << std::endl;
-//    }
-//    std::cout << std::endl;
-
-    //Traverse topological sort in REVERSE
-    P.resize(ts.size()); // P resized to topSort vector for later storage
-    for(int idx = int(ts.size()) - 1; idx >= 0; idx--) {
-        int maxOfIdx = F(ts.at(idx));
-        f_array.push_back(maxOfIdx);
-    }
-    std::reverse(f_array.begin(), f_array.end());
-
-//    std::cout << "f_array is: ";
-//    for(auto & amt: f_array) {
-//        std::cout << amt << ' ';
-//    }
-//    std::cout << '\n';
-//    std::cout << "topSort is: ";
-//    for (auto & num: ts){
-//        std::cout << num << " ";
-//    }
-//    std::cout << '\n';
-
-    for(int i = 0; i < P.size(); i++) {
-        P.at(i) = getMaxOf(nodes[ts.at(i)]);
-    }
-
-//    std::cout << "P array is: ";
-//    for(auto & p: P) {
-//        std::cout << p << ' ';
-//    }
-//    std::cout << '\n';
-
-    path.push_back(0);
-    int n = P.at(0);
-    while(n != -88) {
-        path.push_back(n);
-        n = P.at(getIdxOf(ts, n));
-    }
-
-//    std::cout << "path array is: ";
-//    for(auto & entry: path) {
-//        std::cout << entry << ' ';
-//    }
-//    std::cout << '\n';
+    getOptPath();
 }
-
-
-
-int Graph::getTotalPayment() {
-    //return f_array.at(getIdxOf(ts, path.at(1)));
-    int v = 0;
-    int rev = 0;
-    while (v < (int)clients.size()-1) {
-        rev += clients[P[v]-1].getAmount();
-        path.push_back(P[v]);
-        v = P[v];
-    }
-    return rev;
-}
-
-
-
-std::vector<int> Graph::getFinalClients() {
-    return path;
-}
-
-
-int Graph::getNumOfClients() {
-    return clients.size();
-}
-
-
-
-int Graph::getMaxOf(std::vector<int> nodes) {
-    if(nodes.size() == 1) {
-        return nodes.at(0);
-    }
-
-    if(nodes.empty()) {
-        return -88;
-    }
-
-    int maxNode = nodes.at(0), maxVal = -1;
-    for(auto & node: nodes) {
-        // input is nodes
-        // 2 3
-        // 4
-        // 4
-        // 1
-        //choose the max one
-
-        //getIdx of node in ts
-        int f_idx = getIdxOf(ts, node);
-        if(f_array.at(f_idx) > maxVal) {
-            maxNode = node;
-            maxVal = f_array.at(f_idx);
-        }
-    }
-
-    return maxNode;
-}
-
-
-
-int Graph::getIdxOf(std::vector<int> vec, int n) {
-    int index = 0;
-    while(vec.at(index) != n) {
-        index++;
-    }
-    return index;
-}
-
-
-
-int Graph::F(int n) {
-    // If end node
-    if(n == nodes.size() - 1) {
-        return 0;
-    }
-
-
-    if(nodes.at(n).size() > 1) {
-        std::vector<int> possibleMax;
-        // go through all possible nodes and get all values
-        for(int i = 0; i < nodes.at(n).size(); i++) {
-           possibleMax.push_back(F(nodes[n].at(i)));
-        }
-
-        // pick and return the max of collected values
-        int chosenMax = -1, it = 0;
-        for(auto & num: possibleMax) {
-            if (num > chosenMax) {
-                chosenMax = num;
-            }
-            it++;
-        }
-        return chosenMax;
-    }
-
-    return F(nodes[n][0]) + clients.at(n - 1).getAmount();
-}
-
-
 
 // Topological Sorting
 void Graph::topSort() {
@@ -280,19 +88,6 @@ void Graph::topSort() {
         }
         sorted.push_back(n);
         q.pop();
-    }
-    for (int i=0; i<(int)nodes.size(); i++){
-        std::cout << std::left << std::setw(4);
-        if (i != (int) nodes.size() - 1)
-            (i == 0) ? std::cout << "S" : std::cout << i;
-        else
-            std::cout  << "E";
-
-        for (auto & num : nodes[i]) {
-            std::cout << num << ":";
-            (num == (int) nodes.size()-1) ? std::cout << "0": std::cout << clients[num-1].getAmount() << ", ";
-        }
-        std::cout << std::endl;
     }
 
     ts = sorted;
@@ -335,8 +130,26 @@ void Graph::getOptPath() {
     P = opath;
 }
 
+int Graph::getTotalPayment() {
+    int v = 0;
+    int rev = 0;
+    while (v < (int)clients.size()-1) {
+        rev += clients[P[v]-1].getAmount();
+        path.push_back(P[v]);
+        v = P[v];
+    }
+    return rev;
+}
 
-void Graph::print_final() {
+std::vector<int> Graph::getFinalClients() {
+    return path;
+}
+
+int Graph::getNumOfClients() {
+    return clients.size();
+}
+
+void Graph::print_result() {
     std::cout << "There are " << getNumOfClients() << " clients in this file.\n";
 
     std::cout << std::endl;
@@ -355,4 +168,29 @@ void Graph::print_final() {
 
     }
     std::cout << std::endl;
+}
+
+void Graph::debug_printMatrix() {
+    std::cout << std::left << std::setw(10) << "";
+    std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
+    for(int i=1; i < matrixSize-1; i++) {
+        std::cout << std::left << std::setw(8) << i << ' ';
+    }
+    std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
+    std::cout <<'\n';
+
+    for(int i= 0; i < matrixSize; i++) {
+        if(i == 0) {
+            std::cout<< std::left << std::setw(8)<< "S" <<  ' ';
+        } else if (i == matrixSize-1) {
+            std::cout<< std::left << std::setw(8)<< "E" <<  ' ';
+        } else {
+            std::cout << std::left << std::setw(8) << i << ' ';
+        }
+
+        for(int k=0; k < matrixSize; k++) {
+            std::cout << std::left << std::setw(8) << clientMatrix[i][k] << ' ';
+        }
+        std::cout<<'\n';
+    }
 }
