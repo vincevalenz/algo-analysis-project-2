@@ -150,7 +150,15 @@ void Graph::getOptimalPath() {
 
 
 int Graph::getTotalPayment() {
-    return f_array.at(getIdxOf(ts, path.at(1)));
+    //return f_array.at(getIdxOf(ts, path.at(1)));
+    int v = 0;
+    int rev = 0;
+    while (v < (int)clients.size()-1) {
+        rev += clients[P[v]-1].getAmount();
+        path.push_back(P[v]);
+        v = P[v];
+    }
+    return rev;
 }
 
 
@@ -239,7 +247,8 @@ int Graph::F(int n) {
 
 // Topological Sorting
 void Graph::topSort() {
-    int size = clientMatrix.size();
+
+    int size = (int)clientMatrix.size();
     int n;
     std::queue<int> q;
     std::vector<int> sorted;
@@ -257,13 +266,6 @@ void Graph::topSort() {
         nodes.push_back(edgeList);
     }
 
-//    for (int i=0; i<nodes.size(); i++) {
-//        std::cout <<  i << ": ";
-//        for (int j=0; j<nodes[i].size(); j++)
-//            std::cout << nodes[i][j] << " ";
-//        std::cout << " | Edge Count: " << edgeCount[i] << std::endl;
-//    }
-
     for (int i=0; i<size; i++) {
         if (edgeCount[i] == 0)
             q.push(i);
@@ -271,7 +273,6 @@ void Graph::topSort() {
 
     while (!q.empty()) {
         n = q.front();
-//        std::cout << n << " ";
         for(int i=0; i<(int)nodes[n].size(); i++) {
             edgeCount[nodes[n][i]]--;
             if (edgeCount[nodes[n][i]] == 0)
@@ -280,19 +281,78 @@ void Graph::topSort() {
         sorted.push_back(n);
         q.pop();
     }
-//    std::cout << std::endl;
-//    for (int i=0; i<nodes.size(); i++) {
-//        std::cout <<  i << ": ";
-//        for (int j=0; j<nodes[i].size(); j++)
-//            std::cout << nodes[i][j] << " ";
-//        std::cout << " | Edge Count: " << edgeCount[i] << std::endl;
-//    }
+    for (int i=0; i<(int)nodes.size(); i++){
+        std::cout << std::left << std::setw(4);
+        if (i != (int) nodes.size() - 1)
+            (i == 0) ? std::cout << "S" : std::cout << i;
+        else
+            std::cout  << "E";
+
+        for (auto & num : nodes[i]) {
+            std::cout << num << ":";
+            (num == (int) nodes.size()-1) ? std::cout << "0": std::cout << clients[num-1].getAmount() << ", ";
+        }
+        std::cout << std::endl;
+    }
 
     ts = sorted;
 }
 
+void Graph::getOptPath() {
+    int end = (int)ts.size()-1;
+    std::vector<int> weight(end+1, 0);
+    std::vector<int> opath(end+1, -1);
+    /*
+     * nodes index:     0   1   2   3   4   5      <-- order of clients as parsed in
+     * weight vals:     w   w   w   w   w   w      <-- highest weight possible for node
+     * opt path:        2   5   3   5   5   -      <-- value indicates next best node to jump to
+     *                                              -- path(node)=next -> path(next)=next1 ... will skip down the opt path
+     */
+    for (int v = end-1; v >=0; v--) {
+        int W = 0;
+        int n = ts[v];
+        int p = end;
+        if (v == 0) {
+            for (auto & j : nodes[n]) {
+                if (W < weight[j]) {
+                    W = weight[j];
+                    p = j;
+                }
+            }
+        }
+        else {
+            W = clients[n - 1].getAmount();
+            for (auto &j : nodes[v]) {
+                if (W < weight[j] + clients[n - 1].getAmount()) {
+                    W = weight[j] + clients[n - 1].getAmount();
+                    p = j;
+                }
+            }
+        }
+        weight[v] = W;
+        opath[v] = p;
+    }
+    P = opath;
+}
 
 
-std::vector< std::vector<int> > Graph::getNodes() {
-    return nodes;
+void Graph::print_final() {
+    std::cout << "There are " << getNumOfClients() << " clients in this file.\n";
+
+    std::cout << std::endl;
+    int revenue = getTotalPayment();
+    std::cout << "Optimal revenue earned is " << revenue;
+    std::cout << std::endl;
+
+    std::cout << "Clients contributing to this optimal revenue: ";
+    int numOfClients = (int)path.size();
+    for(auto & c : path) {
+        numOfClients--;
+        if(numOfClients == 0)
+            std::cout << c;
+        else
+            std::cout << c << ", ";
+
+    }
+    std::cout << std::endl;
 }
