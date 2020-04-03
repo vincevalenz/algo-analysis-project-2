@@ -19,12 +19,14 @@ int main(int argc, char *argv[]) {
 
     ClientParser parser(file);
     std::vector<RentalForm> clients;
+    clients.push_back(RentalForm(0,0,0));      //start node
     RentalForm c = parser.getClient();
 
-    while (c.getStartDate() > 0) {
+    while (c.getStartDate() > -1) {                     // client nodes
         clients.push_back(c);
         c = parser.getClient();
     }
+    clients.push_back(c);                               // end node
 
     //build dag from parsed client file
     Graph g(clients);

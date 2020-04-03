@@ -10,41 +10,17 @@
 
 void Graph::buildMatrix() {
     //connect inner nodes
-    for(int i = 0; i < clients.size(); i++) {
-        for(int k = 0; k < clients.size(); k++)
-            if(clients.at(k).getStartDate() >= clients.at(i).getEndDate()) {
-                clientMatrix[i+1].at(k+1) = clients.at(i).getAmount();
-            }
-    }
-
-    //connect start node
-    bool noIn = true;
-    for(int col = 1; col < matrixSize - 1; col++) {
-        for (int row = 0; row < matrixSize - 1; row++) {
-            int x = clientMatrix[row].at(col);
-            if(clientMatrix[row].at(col) != -1) {
-                noIn = false;
+    for(int row = 1; row < clients.size()-1; row++) {
+        clientMatrix[0][row] = 1;
+        bool end = true;
+        for(int col = 1; col < clients.size()-1; col++) {
+            if (clients[row].getEndDate() <= clients[col].getStartDate()) {
+                clientMatrix[row][col] = 1;
+                clientMatrix[0][col] = 0;
+                end = false;
             }
         }
-        if(noIn) {
-            clientMatrix[0].at(col) = 0;
-        }
-        noIn = true;
-    }
-
-    //connect end node
-    bool noOut = true;
-    for(int row = 1; row < matrixSize - 1; row++) {
-        for (int col = 1; col < matrixSize - 1; col++) {
-            if(clientMatrix[row].at(col) != -1) {
-                noOut = false;
-            }
-        }
-        if(noOut) {
-            int f = clientMatrix[row].at(matrixSize-1);
-            clientMatrix[row].at(matrixSize-1) = clients.at(row-1).getAmount();
-        }
-        noOut = true;
+        if (end) clientMatrix[row][matrixSize-1] = 1;
     }
 }
 
@@ -56,17 +32,14 @@ void Graph::getPath() {
 // Topological Sorting
 void Graph::topSort() {
 
-    int size = (int)clientMatrix.size();
-    int n;
     std::queue<int> q;
-    std::vector<int> sorted;
-    std::vector<int> edgeCount(size, 0);
+    std::vector<int> edgeCount(matrixSize, 0);
 
 
-    for (int v=0; v < size; v++) {
+    for (int v=0; v < matrixSize; v++) {
         std::vector<int> edgeList;
-        for (int i=0; i<size; i++) {
-            if (clientMatrix[v][i] >= 0) {
+        for (int i=0; i<matrixSize; i++) {
+            if (clientMatrix[v][i] == 1) {
                 edgeCount[i]++;
                 edgeList.push_back(i);
             }
@@ -74,11 +47,12 @@ void Graph::topSort() {
         nodes.push_back(edgeList);
     }
 
-    for (int i=0; i<size; i++) {
+    for (int i=0; i<matrixSize; i++) {
         if (edgeCount[i] == 0)
             q.push(i);
     }
 
+    int n;
     while (!q.empty()) {
         n = q.front();
         for(int i=0; i<(int)nodes[n].size(); i++) {
@@ -86,29 +60,25 @@ void Graph::topSort() {
             if (edgeCount[nodes[n][i]] == 0)
                 q.push(nodes[n][i]);
         }
-        sorted.push_back(n);
+        ts.push_back(n);
         q.pop();
     }
-    ts = sorted;
 }
 
+// Finding Optimal Path
 void Graph::getOptPath() {
     int end = (int)ts.size()-1;
     std::vector<int> weight(end+1, 0);
-    std::vector<int> opath(end+1, -1);
+    std::vector<int> opath(end+1, 0);
     std::vector<int> wRef(end+1, 0);
     for (int i=0; i<end+1; i++) {
         wRef[ts[i]] = i;
     }
-    /*
-     * nodes index:     0   1   2   3   4   5      <-- order of clients as parsed in
-     * weight vals:     w   w   w   w   w   w      <-- highest weight possible for node
-     * opt path:        2   5   3   5   5   -      <-- value indicates next best node to jump to
-     *                                              -- path(node)=next -> path(next)=next1 ... will skip down the opt path
-     */
+
     for (int v = end-1; v >=0; v--) {
         int W = 0;
         int n = ts[v];
+        int cW = clients[n].getAmount();
         int p = end;
         if (v == 0) {
             for (auto & j : nodes[n]) {
@@ -119,10 +89,9 @@ void Graph::getOptPath() {
             }
         }
         else {
-            W = clients[n - 1].getAmount();
-            for (auto &j : nodes[n]) {
-                if (W < weight[wRef[j]] + clients[n - 1].getAmount()) {
-                    W = weight[wRef[j]] + clients[n - 1].getAmount();
+            for (auto & j : nodes[n]) {
+                if (W < weight[wRef[j]] + cW) {
+                    W = weight[wRef[j]] + cW;
                     p = j;
                 }
             }
@@ -139,8 +108,8 @@ int Graph::getTotalPayment() {
         return revenue;
     int v = 0;
     int rev = 0;
-    while (v < (int)clients.size()) {
-        rev += clients[P[v]-1].getAmount();
+    while (v < (int)clients.size()-2) {
+        rev += clients[P[v]].getAmount();
         path.push_back(P[v]);
         v = rts[P[v]];
     }
@@ -157,7 +126,7 @@ int Graph::getNumOfClients() {
 }
 
 void Graph::print_result() {
-    std::cout << "There are " << getNumOfClients() << " clients in this file.\n";
+    std::cout << "There are " << getNumOfClients()-2 << " clients in this file.\n";
 
     std::cout << std::endl;
     std::cout << "Optimal revenue earned is " << getTotalPayment();

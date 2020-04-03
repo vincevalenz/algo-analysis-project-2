@@ -12,13 +12,16 @@
 
 class Graph {
 public:
-    explicit Graph(std::vector<RentalForm> c): clients{c}, nodes{}, P{}, ts{}, path{} {init_clientMatrix();}
+    explicit Graph(std::vector<RentalForm> c):      clients{c}
+                                                    {
+                                                        init_clientMatrix();
+                                                    }
      void init_clientMatrix() {
-         int default_value = -1;
-         int M = clients.size() + 2;
+         int default_value = 0;
+         int M = clients.size();
          std::vector<std::vector<int>> temp(M, std::vector<int>(M,default_value));
          clientMatrix = temp;
-         matrixSize = clients.size() + 2;
+         matrixSize = clients.size();
      }
     void buildMatrix();
     void getPath();

@@ -13,7 +13,7 @@
 void write_to_file(Graph &g, std::string file) {
     std::ofstream output("out"+file);
 
-    output << "There are " << g.getNumOfClients() << " clients in this file.\n";
+    output << "There are " << g.getNumOfClients()-2 << " clients in this file.\n";
 
     output << std::endl;
     output << "Optimal revenue earned is " << g.getTotalPayment();
